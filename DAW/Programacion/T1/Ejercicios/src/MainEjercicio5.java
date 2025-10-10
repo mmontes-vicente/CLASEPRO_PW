@@ -24,19 +24,19 @@ public class MainEjercicio5 {
         int nivel= 1;
         int puntuacion= 0;
 
-        System.out.println("Aplicación: "+ aplicacion);
-        System.out.println("Versión: "+ version);
+        System.out.println("Aplicación: "+aplicacion);
+        System.out.println("Versión: "+version);
         System.out.println("Valor de PI: "+Math.PI);
-        System.out.println("Usuario actual: "+ usuario);
-        System.out.println("Nivel: "+ nivel);
-        System.out.println("Puntuación: "+ puntuacion+"\n");
+        System.out.println("Usuario actual: "+usuario);
+        System.out.println("Nivel: "+nivel);
+        System.out.println("Puntuación: "+puntuacion+"\n");
 
         usuario ="Miguel";
         nivel= 2;
         puntuacion= 150;
 
-        System.out.println("Usuario actualizado: "+ usuario);
-        System.out.println("Nivel actualizado: "+ nivel);
-        System.out.println("Puntuación actualizado: "+ puntuacion);
+        System.out.println("Usuario actualizado: "+usuario);
+        System.out.println("Nivel actualizado: "+nivel);
+        System.out.println("Puntuación actualizado: "+puntuacion);
     }
 }

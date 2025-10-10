@@ -21,9 +21,9 @@ Disponible: true*/
         String codigo="AUR-2023";
         boolean disponible= true;
 
-        System.out.println("Nombre: "+ nombre);
-        System.out.println("Precio: "+ precio);
-        System.out.println("Código: "+ codigo);
-        System.out.println("Disponible: "+ disponible);
+        System.out.println("Nombre: "+nombre);
+        System.out.println("Precio: "+precio);
+        System.out.println("Código: "+codigo);
+        System.out.println("Disponible: "+disponible);
     }
 }

@@ -13,7 +13,7 @@ public class MainEjercicio7 {
         int edad= 42;
         String ciudad="Madrid.";
 
-        System.out.println("¡Hola! Me llamo " + nombre);
+        System.out.println("¡Hola! Me llamo " +nombre);
         System.out.println("Tengo " +edad+ " años y vivo en " +ciudad);
     }
 }

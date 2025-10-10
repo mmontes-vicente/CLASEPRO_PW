@@ -13,7 +13,7 @@ Temperatura en Fahrenheit: 77*/
 
         int fahrenheit = celsius * 9/5 + 32;
 
-        System.out.println("Temperatura en Celsius: " +celsius);
-        System.out.println("Temperatura en Fahrenheit: " +fahrenheit);
+        System.out.println("Temperatura en Celsius: "+celsius);
+        System.out.println("Temperatura en Fahrenheit: "+fahrenheit);
     }
 }
