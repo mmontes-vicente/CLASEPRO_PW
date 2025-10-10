@@ -1,5 +1,6 @@
 public class MainEjercicio2 {
-    /*Ejercicio 2: Modificar variables
+    /*
+    Ejercicio 2: Modificar variables
     Crea un programa que defina una variable llamada puntuación con valor inicial 0. Luego, modifica su valor tres veces y muestra el resultado final.
     Ejemplo de salida por consola:
     Puntuación inicial: 0
