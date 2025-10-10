@@ -20,7 +20,7 @@ public class MainEjercicio2 {
         System.out.println("Después de primera modificación:" +puntuacion);
 
         // Segunda modificación
-        puntuacion += 5;
+        puntuacion = puntuacion + 5;
 
         System.out.println("Después de segunda modificación:" +puntuacion);
 
