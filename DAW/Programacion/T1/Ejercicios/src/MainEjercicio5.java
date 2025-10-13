@@ -19,12 +19,12 @@ public class MainEjercicio5 {
     public static void main(String[] args) {
 
         String usuario="Laura";
-        final String aplicacion="MiApp";
+        final String APLICACION="MiApp";
         String version = "1.0.0";
         int nivel= 1;
         int puntuacion= 0;
 
-        System.out.println("Aplicación: "+aplicacion);
+        System.out.println("Aplicación: "+APLICACION);
         System.out.println("Versión: "+version);
         System.out.println("Valor de PI: "+Math.PI);
         System.out.println("Usuario actual: "+usuario);
