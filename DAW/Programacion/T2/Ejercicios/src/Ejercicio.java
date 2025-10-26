@@ -29,12 +29,11 @@ public class Ejercicio {
         System.out.println("Introduce el segundo número: ");
         int numero2 = lectorTeclado.nextInt();
 
-        numero1 = 15;
-        numero2 = 4;
+
         int suma = numero1+numero2;
-        int resta = numero1+numero2;
+        int resta = numero1-numero2;
         int multiplicacion = numero1*numero2;
-        int division = numero1/numero2;
+        double division = (double)numero1/numero2;
         int resto = numero1%numero2;
 
         System.out.println("Suma: "+suma);
@@ -119,7 +118,7 @@ public class Ejercicio {
 
     }
 
-    public void ejercicio4() {
+    public void ejercicio4SinIf() {
     /*
     Número par o impar
     Desarrolla un programa que pida un número al usuario y determine si es par o impar
@@ -146,6 +145,34 @@ public class Ejercicio {
         // Mostramos el resultado por pantalla
         System.out.println("El número " + numero + " es " + tipo[resto] +
                 " (resto al dividir entre 2: " + resto + ")");
+
+        // Cerramos el Scanner (buena práctica)
+        lectorTeclado.close();
+    }
+
+    public void ejercicio4() {
+    /*
+    Número par o impar
+    Desarrolla un programa que pida un número al usuario y determine si es par o impar
+    usando el operador módulo. Muestra el resultado por consola.
+    Ejemplo de salida por consola:
+    Introduce un número: 7
+    El número 7 es impar (resto al dividir entre 2: 1)
+    */
+
+        // Creamos un objeto Scanner para leer la entrada del usuario
+        lectorTeclado = new Scanner(System.in);
+
+        // Pedimos un número al usuario
+        System.out.print("Introduce un número: ");
+        int numero = lectorTeclado.nextInt(); // Leemos el número introducido
+
+        // Calculamos el resto de dividir entre 2
+        if ( numero %2 != 0 ){
+            System.out.print("El número "+ numero + " es impar (resto al dividir entre 2: 1) ");
+        } else{
+            System.out.print("El número "+ numero + " es par");
+        }
 
         // Cerramos el Scanner (buena práctica)
         lectorTeclado.close();
@@ -231,7 +258,6 @@ public class Ejercicio {
         System.out.println(" Precio final: " + precioFinal + "€");
 
 
-
         // Cerramos el Scanner (buena práctica)
         lectorTeclado.close();
     }
@@ -287,10 +313,165 @@ public class Ejercicio {
         System.out.println("¿Tienes descuento especial? (menor de 26 AND estudiante): " + descuentoEspecial);
 
 
+        // Cerramos el Scanner (buena práctica)
+        lectorTeclado.close();
+    }
+
+    public void ejercicio8() {
+    /*
+    Operaciones combinadas
+    Desarrolla un programa que pida tres números al usuario y calcule:
+    la suma de los tres, el promedio, el resultado de multiplicar el primero por el
+    segundo y dividirlo entre el tercero. Usa paréntesis para controlar la precedencia de
+    operadores.
+    Ejemplo de salida por consola:
+    Introduce el primer número: 10
+    Introduce el segundo número: 5
+    Introduce el tercer número: 2
+    Suma de los tres números: 15
+    Promedio: 5.0
+    Resultado de (número1 * número2) / número3: 25.0
+    */
+
+        // Creamos un objeto Scanner para leer la entrada del usuario
+        lectorTeclado = new Scanner(System.in);
+
+        // Pedimos Introduce el primer número
+        System.out.print(" Introduce el primer número: ");
+        int n1 = lectorTeclado.nextInt(); // Leemos el número introducido
+
+        // Pedimos Introduce el segundo número
+        System.out.print("Introduce el segundo número:  ");
+        int n2 = lectorTeclado.nextInt(); // Leemos el true o false
+
+        // Pedimos Introduce el tercer número
+        System.out.print("Introduce el tercer número: ");
+        int n3 = lectorTeclado.nextInt(); // Leemos el true o false
+
+        // Suma de los tres números:
+        int sumaNumeros = n1 + n2 + n3;
+        System.out.println("Suma de los tres números: " + sumaNumeros);
+
+        // Promedio:
+        double promedio = (double)sumaNumeros / 3;
+        System.out.println("Promedio: " + promedio);
+
+        // Resultado de (número1 * número2) / número3:
+        double respuesta = (double)(n1 * n2) / n3;
+        System.out.println("Resultado de (número1 * número2) / número3: " + respuesta);
 
 
         // Cerramos el Scanner (buena práctica)
         lectorTeclado.close();
     }
+
+    public void ejercicio9() {
+    /*
+    Sistema de calificaciones
+    Escribe un programa que pida al usuario la puntuación de tres exámenes.
+    Calcula la nota media y usa operadores relacionales para determinar si ha aprobado
+    (>=5), si tiene notable (>=7), y si tiene sobresaliente (>=9). Muestra todos los resultados.
+    Ejemplo de salida por consola:
+    Introduce la nota del primer examen: 8
+    Introduce la nota del segundo examen: 7
+    Introduce la nota del tercer examen: 9
+    Nota media: 8.0
+    ¿Ha aprobado? (>=5): true
+    ¿Tiene notable? (>=7): true
+    ¿Tiene sobresaliente? (>=9): false
+    */
+
+        // Creamos un objeto Scanner para leer la entrada del usuario
+        lectorTeclado = new Scanner(System.in);
+
+        // Introduce la nota del primer examen:
+        System.out.print(" Introduce la nota del primer examen: ");
+        int nota1 = lectorTeclado.nextInt();
+
+        // Introduce la nota del segundo examen:
+        System.out.print("Introduce la nota del segundo examen:  ");
+        int nota2 = lectorTeclado.nextInt();
+
+        // Introduce la nota del tercer examen:
+        System.out.print("Introduce la nota del tercer examen: ");
+        int nota3 = lectorTeclado.nextInt();
+
+        // Nota media:
+        double notaMedia = (double)(nota1 + nota2 + nota3) / 3;
+        System.out.println("Nota media: " + notaMedia);
+
+        //¿Ha aprobado? (>=5):
+        boolean aprobado = notaMedia >=5;
+        System.out.println("¿Ha aprobado? (>=5): " + aprobado);
+
+        //¿Tiene notable? (>=7): true
+        boolean notable = notaMedia >=7;
+        System.out.println("¿Tiene notable? (>=7): " + notable);
+
+        //¿Tiene sobresaliente? (>=9): false
+        boolean sobresaliente = notaMedia >=9;
+        System.out.println("¿Tiene sobresaliente? (>=9): " + sobresaliente);
+
+        // Cerramos el Scanner (buena práctica)
+        lectorTeclado.close();
+    }
+
+    public void ejercicio10() {
+    /*
+    Calculadora de salario con condiciones
+    Crea un programa que pida el salario base por hora, las horas trabajadas
+    y si ha hecho horas extra (true/false). Si ha hecho horas extra y trabajó más de 40 horas,
+    las horas que excedan de 40 se pagan al doble. Usa operadores lógicos, relacionales y
+    aritméticos para calcular el salario total.
+    Ejemplo de salida por consola:
+    Introduce el salario por hora: 10
+    Introduce las horas trabajadas: 45
+    ¿Has hecho horas extra? (true/false): true
+    Horas normales (máximo 40): 40
+    Horas extra: 5
+    ¿Trabajaste más de 40 horas?: true
+    ¿Tienes derecho a horas extra?: true
+    ¿Se aplican horas extra? (>40 AND permitido): true
+    Salario por horas normales: 400.0€
+    Salario por horas extra (al doble): 100.0€
+    Salario total: 500.0€
+    */
+
+        // Creamos un objeto Scanner para leer la entrada del usuario
+        lectorTeclado = new Scanner(System.in);
+
+        // Introduce la nota del primer examen:
+        System.out.print(" Introduce la nota del primer examen: ");
+        int nota1 = lectorTeclado.nextInt();
+
+        // Introduce la nota del segundo examen:
+        System.out.print("Introduce la nota del segundo examen:  ");
+        int nota2 = lectorTeclado.nextInt();
+
+        // Introduce la nota del tercer examen:
+        System.out.print("Introduce la nota del tercer examen: ");
+        int nota3 = lectorTeclado.nextInt();
+
+        // Nota media:
+        double notaMedia = (double)(nota1 + nota2 + nota3) / 3;
+        System.out.println("Nota media: " + notaMedia);
+
+        //¿Ha aprobado? (>=5):
+        boolean aprobado = notaMedia >=5;
+        System.out.println("¿Ha aprobado? (>=5): " + aprobado);
+
+        //¿Tiene notable? (>=7): true
+        boolean notable = notaMedia >=7;
+        System.out.println("¿Tiene notable? (>=7): " + notable);
+
+        //¿Tiene sobresaliente? (>=9): false
+        boolean sobresaliente = notaMedia >=9;
+        System.out.println("¿Tiene sobresaliente? (>=9): " + sobresaliente);
+
+        // Cerramos el Scanner (buena práctica)
+        lectorTeclado.close();
+    }
+
+
 
 }
