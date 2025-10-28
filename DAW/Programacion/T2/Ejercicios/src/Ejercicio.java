@@ -1,3 +1,4 @@
+import java.sql.SQLOutput;
 import java.util.Scanner;
 
 public class Ejercicio {
@@ -164,14 +165,14 @@ public class Ejercicio {
         lectorTeclado = new Scanner(System.in);
 
         // Pedimos un número al usuario
-        System.out.print("Introduce un número: ");
+        System.out.println("Introduce un número: ");
         int numero = lectorTeclado.nextInt(); // Leemos el número introducido
 
         // Calculamos el resto de dividir entre 2
         if ( numero %2 != 0 ){
-            System.out.print("El número "+ numero + " es impar (resto al dividir entre 2: 1) ");
+            System.out.println("El número "+ numero + " es impar (resto al dividir entre 2: 1) ");
         } else{
-            System.out.print("El número "+ numero + " es par");
+            System.out.printf("El número %d es par", numero);
         }
 
         // Cerramos el Scanner (buena práctica)
@@ -416,13 +417,19 @@ public class Ejercicio {
         lectorTeclado.close();
     }
 
-    public void ejercicio10() {
+    public void ejercicio10(int horas) {
     /*
     Calculadora de salario con condiciones
-    Crea un programa que pida el salario base por hora, las horas trabajadas
-    y si ha hecho horas extra (true/false). Si ha hecho horas extra y trabajó más de 40 horas,
-    las horas que excedan de 40 se pagan al doble. Usa operadores lógicos, relacionales y
+    Crea un programa que pida el salario base por hora,
+    las horas trabajadas
+    y si ha hecho horas extra (true/false).
+
+    Si ha hecho horas extra y trabajó más de 40 horas,
+    las horas que excedan de 40 se pagan al doble.
+
+    Usa operadores lógicos, relacionales y
     aritméticos para calcular el salario total.
+
     Ejemplo de salida por consola:
     Introduce el salario por hora: 10
     Introduce las horas trabajadas: 45
@@ -440,33 +447,28 @@ public class Ejercicio {
         // Creamos un objeto Scanner para leer la entrada del usuario
         lectorTeclado = new Scanner(System.in);
 
-        // Introduce la nota del primer examen:
-        System.out.print(" Introduce la nota del primer examen: ");
-        int nota1 = lectorTeclado.nextInt();
+        // Solicitar datos al usuario
+        System.out.println("Introduce el salario por hora: ");
+        int salarioHora = lectorTeclado.nextInt();
 
-        // Introduce la nota del segundo examen:
-        System.out.print("Introduce la nota del segundo examen:  ");
-        int nota2 = lectorTeclado.nextInt();
+        System.out.println("Introduce las horas trabajadas: ");
+        int horasTrabajadas = lectorTeclado.nextInt();
 
-        // Introduce la nota del tercer examen:
-        System.out.print("Introduce la nota del tercer examen: ");
-        int nota3 = lectorTeclado.nextInt();
+        System.out.println("¿Has hecho horas extra? (true/false): ");
+        boolean horasExtras = lectorTeclado.nextBoolean();
 
-        // Nota media:
-        double notaMedia = (double)(nota1 + nota2 + nota3) / 3;
-        System.out.println("Nota media: " + notaMedia);
+        int salarioTotal=0;
+        salarioTotal+= horas +salarioHora;
 
-        //¿Ha aprobado? (>=5):
-        boolean aprobado = notaMedia >=5;
-        System.out.println("¿Ha aprobado? (>=5): " + aprobado);
+        if(horasExtras && horasTrabajadas>horas){
+            int numeroHorasExtras = horasTrabajadas-horas;
+            salarioTotal = numeroHorasExtras * (salarioHora*2);
 
-        //¿Tiene notable? (>=7): true
-        boolean notable = notaMedia >=7;
-        System.out.println("¿Tiene notable? (>=7): " + notable);
+        }
+        salarioTotal+= 40 *salarioHora;
+        System.out.println("El salario cobrado este mes es " + salarioTotal);
 
-        //¿Tiene sobresaliente? (>=9): false
-        boolean sobresaliente = notaMedia >=9;
-        System.out.println("¿Tiene sobresaliente? (>=9): " + sobresaliente);
+
 
         // Cerramos el Scanner (buena práctica)
         lectorTeclado.close();
