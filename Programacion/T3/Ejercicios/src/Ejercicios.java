@@ -425,6 +425,8 @@ public class Ejercicios {
         System.out.println(" Introduce una contraseña: ");
 
 
+
+
         lectorTeclado.close();
     }
 
@@ -469,12 +471,12 @@ public class Ejercicios {
 
 
 
-        if(menor12){
+        if(edad<12){
 
             System.out.println("¿Eres menor de 12?: "+ (false));
 
         }
-         if(edad>=12 && edad<=17){
+         else if( edad<=17){
 
             System.out.println("¿Tienes entre 12 y 17?: "+ (true));
 
@@ -613,4 +615,784 @@ public class Ejercicios {
 
         lectorTeclado.close();
     }
+
+
+    //Ejercicios de Estructuras IF WEb Profe Java
+
+
+    public void ejercicio16() {
+        /*
+        Verificador de Edad
+
+        Escribe un programa que solicite al usuario su edad y
+        determine si es mayor de edad (18 años o más) o menor de edad.
+        El programa debe mostrar un mensaje apropiado según el resultado.
+     */
+
+        // Creamos un objeto Scanner para leer la entrada del usuario
+        lectorTeclado = new Scanner(System.in);
+
+
+        System.out.println(" Introduce tu edad: ");
+        int edad = lectorTeclado.nextInt();
+
+
+        if (edad >= 18) {
+
+            System.out.println("Eres mayor de edad eres apto para el trabajo: " + edad );
+
+        }
+        else if (edad >=0 && edad < 16) {
+
+            System.out.println("No eres mayor de edad no eres apto para el trabajo: " + edad );
+        }
+
+        System.out.println("No es una edad admintida: " + edad );
+
+
+        lectorTeclado.close();
+    }
+
+    public void ejercicio17() {
+        /*
+        Calculadora de Impuestos
+
+        Crea un programa que pida al usuario su salario anual y calcule el impuesto a pagar
+        según las siguientes reglas:
+
+        - Menos de 10.000€: no paga impuestos
+        - Entre 10.000€ y 20.000€: paga el 5% de impuestos
+        - Entre 20.000€ y 35.000€: paga el 15% de impuestos
+        - Más de 35.000€: paga el 20% de impuestos
+
+        El programa debe mostrar el salario original y el monto de impuestos a pagar.
+     */
+
+        // Creamos un objeto Scanner para leer la entrada del usuario
+        lectorTeclado = new Scanner(System.in);
+
+
+        System.out.println(" Introduce salario anual: ");
+        int salario = lectorTeclado.nextInt();
+
+        int impuestos = salario;
+
+        if (salario <= 10000) {
+
+            System.out.println("No paga impuestos ");
+
+        } else if (salario <= 20000) {
+
+            impuestos = salario * 5 / 100;
+            System.out.println("Pagas el 5% de impuestos: " + impuestos + "€.");
+        } else if (salario <= 35000) {
+
+            impuestos = salario * 15 / 100;
+            System.out.println("Pagas el 15% de impuestos: " + impuestos + "€.");
+        }
+        else {
+            impuestos = salario * 20 / 100;
+            System.out.println("Paga el 20% de impuestos: " + impuestos + "€.");
+        }
+
+
+        lectorTeclado.close();
+
+    }
+
+    public void ejercicio18() {
+        /*
+        Comparador de Números
+
+        Desarrolla un programa que solicite tres números enteros y determine cuál
+        es el mayor de los tres. Muestra el resultado en pantalla.
+     */
+
+        // Creamos un objeto Scanner para leer la entrada del usuario
+        lectorTeclado = new Scanner(System.in);
+
+
+        System.out.println(" Introduce el primer número entero: ");
+        int numero1 = lectorTeclado.nextInt();
+
+        System.out.println(" Introduce el segundo número entero: ");
+        int numero2 = lectorTeclado.nextInt();
+
+        System.out.println(" Introduce el tercer número entero: ");
+        int numero3 = lectorTeclado.nextInt();
+
+        if (numero1 >= numero2 & numero1 >= numero3) {
+
+            System.out.println("El número mayor es el: " + numero1);
+
+        }
+
+        if (numero2 >= numero1 & numero2 >= numero3) {
+
+            System.out.println("El número mayor es el: " + numero2);
+
+        }
+
+        if (numero3 >= numero1 & numero3 >= numero2) {
+
+            System.out.println("El número mayor es el: " + numero3);
+
+        }
+
+        lectorTeclado.close();
+
+    }
+
+    public void ejercicio19() {
+        /*
+        Calculadora de Nota Final
+
+        Crea un programa que solicite al usuario tres notas parciales (de 0 a 10)
+        y calcule la nota final como el promedio de las tres. Además, el programa debe mostrar:
+
+        - Si la nota final es menor a 5: "Suspenso"
+        - Si la nota final está entre 5 y 6.9: "Aprobado"
+        - Si la nota final está entre 7 y 8.9: "Notable"
+        - Si la nota final es 9 o superior: "Sobresaliente"
+     */
+
+        // Creamos un objeto Scanner para leer la entrada del usuario
+        lectorTeclado = new Scanner(System.in);
+
+
+        System.out.println("Introduce primera nota parcial (de 0 a 10): ");
+        int nota1 = lectorTeclado.nextInt();
+
+        System.out.println("Introduce segunda nota parcial (de 0 a 10): ");
+        int nota2 = lectorTeclado.nextInt();
+
+        System.out.println("Introduce tercera nota parcial (de 0 a 10): ");
+        int nota3 = lectorTeclado.nextInt();
+
+        int nota = (nota1 + nota2 + nota3) / 3;
+
+        if (nota < 5) {
+
+            System.out.println("Suspenso: " +nota);
+
+        }
+
+        else if (nota >= 5 && nota <= 6.9) {
+
+            System.out.println("Aprobado " +nota);
+
+        }
+
+        else if (nota >= 7 && nota <= 8.9) {
+
+            System.out.println("Notable " +nota);
+
+        }
+        else if (nota >= 9 && nota <= 10)
+            System.out.println("Sobresaliente " +nota);
+
+        lectorTeclado.close();
+
+    }
+
+    public void ejercicio20() {
+        /*
+        Verificador de Año Bisiesto
+
+        Escribe un programa que solicite al usuario un año y determine si es bisiesto o no.
+        Un año es bisiesto si es divisible por 4,
+        excepto aquellos divisibles por 100 pero no por 400.
+
+        Por ejemplo: 2000 es bisiesto, 1900 no lo es, 2004 es bisiesto.
+     */
+
+        // Creamos un objeto Scanner para leer la entrada del usuario
+        lectorTeclado = new Scanner(System.in);
+
+
+        System.out.println("Escribe un año para saber si es bisiesto o no: ");
+        int ano = lectorTeclado.nextInt();
+
+        // Verificamos si es bisiesto
+        if ((ano % 4 == 0 && ano % 100 != 0) || (ano % 400 ==0)) {
+
+            System.out.println( ano + "Si es bisiesto ");
+
+        }
+        else {
+
+            System.out.println("No es bisiesto ");
+
+        }
+
+        lectorTeclado.close();
+
+    }
+
+
+    //Ejercicios de Estructuras IF
+
+    public void ejercicio21() {
+        /*
+        Convertidor de Días de la Semana
+
+        Desarrolla un programa que solicite al usuario un número del 1 al 7
+        y muestre el día de la semana correspondiente (1: Lunes, 2: Martes, etc.).
+        Si el número está fuera del rango, debe mostrar un mensaje de error.
+     */
+
+        // Creamos un objeto Scanner para leer la entrada del usuario
+        lectorTeclado = new Scanner(System.in);
+
+
+        System.out.println("Introduce un número del 1 al 7: ");
+        int numero = lectorTeclado.nextInt();
+
+        switch (numero) {
+            case 1:
+                System.out.println("Día de la semana es: lunes");
+                break;
+            case 2:
+                System.out.println("Día de la semana es: Martes");
+                break;
+            case 3:
+                System.out.println("Día de la semana es: Miércoles");
+                break;
+            case 4:
+                System.out.println("Día de la semana es: Jueves");
+                break;
+            case 5:
+                System.out.println("Día de la semana es: Viernes");
+                break;
+            case 6:
+                System.out.println("Día de la semana es: Sábado");
+                break;
+
+            default:
+                System.out.println("Día de la semana es: Domingo");
+
+        }
+        lectorTeclado.close();
+    }
+
+    public void ejercicio22() {
+        /*
+        Calculadora Básica
+
+        Crea una calculadora simple que solicite dos números y una operación a realizar
+        (representada por un número):
+
+        - 1: Suma
+        - 2: Resta
+        - 3: Multiplicación
+        - 4: División
+
+        El programa debe realizar la operación seleccionada y mostrar el resultado.
+        Si se selecciona la división y el segundo número es cero, debe mostrar un mensaje de error.
+     */
+
+        // Creamos un objeto Scanner para leer la entrada del usuario
+        lectorTeclado = new Scanner(System.in);
+
+
+        System.out.println("Introduce un número: ");
+        int numero1 = lectorTeclado.nextInt();
+
+        System.out.println("Introduce otro número: ");
+        int numero2 = lectorTeclado.nextInt();
+
+        System.out.println("1.Suma ");
+        System.out.println("2.Resta ");
+        System.out.println("3.División ");
+        System.out.println("4.Multiplicación ");
+        int resultado = lectorTeclado.nextInt();
+
+
+        switch (resultado) {
+            case 1:
+                resultado= numero1+numero2;
+                System.out.println("El resultado es: " + resultado);
+                break;
+            case 2:
+                resultado= numero1-numero2;
+                System.out.println("El resultado es: " + resultado);
+                break;
+            case 3:
+                resultado= numero1/numero2;
+                if (resultado == 0) {
+                    System.out.println("La operación no es correcta");
+                }
+                System.out.println("El resultado es: " + resultado);
+                break;
+            default:
+                resultado= numero1*numero2;
+                System.out.println("El resultado es: " + resultado);
+
+        }
+        lectorTeclado.close();
+    }
+
+    public void ejercicio23() {
+        /*
+        Traductor de Meses
+
+        Escribe un programa que pida al usuario un número del 1 al 12 y muestre el nombre
+        del mes correspondiente en español e inglés. Por ejemplo, si el usuario ingresa 1,
+        el programa mostrará "Enero - Febrero".
+     */
+
+        // Creamos un objeto Scanner para leer la entrada del usuario
+        lectorTeclado = new Scanner(System.in);
+
+
+        System.out.println("Introduce un número del número del 1 al 12: ");
+        int numero = lectorTeclado.nextInt();
+
+        switch (numero) {
+            case 1:
+                System.out.println("Enero, Monday");
+                break;
+            case 2:
+                System.out.println("Febrero, Monday");
+                break;
+            case 3:
+                System.out.println("Marzo, Monday");
+                break;
+            case 4:
+                System.out.println("Abril, Monday");
+                break;
+            case 5:
+                System.out.println("Mayo, Monday");
+                break;
+            case 6:
+                System.out.println("Junio, Monday");
+                break;
+            case 7:
+                System.out.println("Julio, Monday");
+                break;
+            case 8:
+                System.out.println("Agosto, Monday");
+                break;
+            case 9:
+                System.out.println("Septiembre, Monday");
+                break;
+            case 10:
+                System.out.println("Octubre, Monday");
+                break;
+            case 11:
+                System.out.println("Noviembre, Noenber");
+            default:
+                System.out.println("Diciembre, December");
+
+        }
+        lectorTeclado.close();
+    }
+
+    public void ejercicio24() {
+        /*
+        Evaluador de Vocales
+
+        Desarrolla un programa que solicite al usuario una letra y determine si es una vocal o una consonante.
+        Además, si es una vocal, debe indicar si es mayúscula o minúscula. Utiliza la estructura switch para evaluar los casos.
+     */
+
+        // Creamos un objeto Scanner para leer la entrada del usuario
+        lectorTeclado = new Scanner(System.in);
+
+
+        System.out.print("Introduce una letra: ");
+        char letra = lectorTeclado.next().charAt(0); // Leemos el primer carácter
+
+        // Evaluamos la letra usando switch
+        switch (letra) {
+            case 'a':
+            case 'e':
+            case 'i':
+            case 'o':
+            case 'u':
+                System.out.println("La letra '" + letra + "' es una vocal minúscula.");
+                break;
+
+            case 'A':
+            case 'E':
+            case 'I':
+            case 'O':
+            case 'U':
+                System.out.println("La letra '" + letra + "' es una vocal mayúscula.");
+                break;
+
+            default:
+                // Verificamos que sea una letra del alfabeto
+                if (Character.isLetter(letra)) {
+                    System.out.println("La letra '" + letra + "' es una consonante.");
+                } else {
+                    System.out.println("'" + letra + "' no es una letra.");
+                }
+                break;
+        }
+
+        lectorTeclado.close();
+    }
+
+    public void ejercicio25() {
+        /*
+        Conversor de Unidades
+
+        Crea un programa que permita convertir una cantidad entre diferentes unidades de medida. El usuario debe ingresar:
+
+        - La cantidad a convertir
+        - Un número que represente el tipo de conversión:
+        1. 1: De centímetros a pulgadas (1 pulgada = 2.54 cm)
+        2. 2: De kilogramos a libras (1 kg = 2.2046 libras)
+        3. 3: De euros a dólares (usar una tasa de cambio fija, por ejemplo 1€ = 1.10$)
+        4. 4: De kilómetros a millas (1 km = 0.621371 millas)
+
+        El programa debe mostrar el resultado de la conversión con un mensaje apropiado.
+
+        Desarrolla un programa que s
+     */
+
+        // Creamos un objeto Scanner para leer la entrada del usuario
+        lectorTeclado = new Scanner(System.in);
+
+        System.out.print("Introduce la cantidad a convertir: ");
+        double numero = lectorTeclado.nextDouble(); // Leemos el primer carácter
+
+        System.out.println("1: De centímetros a pulgadas (1 pulgada = 2.54 cm). ");
+        System.out.println("2: De kilogramos a libras (1 kg = 2.2046 libras). ");
+        System.out.println("3: De euros a dólares (usar una tasa de cambio fija, por ejemplo 1€ = 1.10$).");
+        System.out.println("4: De kilómetros a millas (1 km = 0.621371 millas)");
+        int resultado = lectorTeclado.nextInt();
+
+
+
+        lectorTeclado.close();
+    }
+
+    public void ejercicio26() {
+        /*
+        Conversor de Unidades
+
+        Crea un programa que permita convertir una cantidad entre diferentes unidades de medida. El usuario debe ingresar:
+
+        - La cantidad a convertir
+        - Un número que represente el tipo de conversión:
+        1. 1: De centímetros a pulgadas (1 pulgada = 2.54 cm)
+        2. 2: De kilogramos a libras (1 kg = 2.2046 libras)
+        3. 3: De euros a dólares (usar una tasa de cambio fija, por ejemplo 1€ = 1.10$)
+        4. 4: De kilómetros a millas (1 km = 0.621371 millas)
+
+        El programa debe mostrar el resultado de la conversión con un mensaje apropiado.
+     */
+
+        // Creamos un objeto Scanner para leer la entrada del usuario
+        lectorTeclado = new Scanner(System.in);
+
+        System.out.print("Introduce la cantidad a convertir: ");
+        double cantidad = lectorTeclado.nextDouble(); // Leemos el primer carácter
+
+        System.out.println("1: De centímetros a pulgadas (1 pulgada = 2.54 cm). ");
+        System.out.println("2: De kilogramos a libras (1 kg = 2.2046 libras). ");
+        System.out.println("3: De euros a dólares (usar una tasa de cambio fija, por ejemplo 1€ = 1.10$).");
+        System.out.println("4: De kilómetros a millas (1 km = 0.621371 millas)");
+        System.out.print("Selecciona una opción del 1 al 4:)");
+        int opcion = lectorTeclado.nextInt();
+
+        double resultado= 0;
+
+        switch (opcion){
+            case 1:
+                resultado = cantidad / 2.54;
+                System.out.println(cantidad + " cm equivalen a " + resultado + " pulgadas.");
+                break;
+
+            case 2:
+                resultado = cantidad * 2.2046;
+                System.out.println(cantidad + " kg equivalen a " + resultado + " libras.");
+                break;
+
+            case 3:
+                resultado = cantidad * 1.10;
+                System.out.println(cantidad + " euros equivalen a " + resultado + " dólares.");
+                break;
+
+            case 4:
+                resultado = cantidad * 0.621371;
+                System.out.println(cantidad + " km equivalen a " + resultado + " millas.");
+                break;
+
+            default:
+                System.out.println("Opción inválida. Intenta nuevamente.");
+                break;
+
+        }
+
+        lectorTeclado.close();
+    }
+
+
+
+    //Ejercicios Switch y For Notion
+
+    public void ejercicio27() {
+        /*
+        Día de la semana
+        Crea un programa que pida un número del 1 al 7 y use un switch para mostrar
+        el día de la semana correspondiente (1=Lunes, 2=Martes, etc.).
+        Ejemplo de salida por consola:
+        Introduce un número (1-7): 3
+        El día 3 es: Miércoles
+     */
+
+        // Creamos un objeto Scanner para leer la entrada del usuario
+        lectorTeclado = new Scanner(System.in);
+
+        System.out.print("Introduce número del 1 al 7: ");
+        int numero = lectorTeclado.nextInt(); // Leemos el primer carácter
+
+        String resultado;
+
+        switch (numero){
+            case 1:
+                resultado = "Lunes";
+                System.out.println(" El día 1 es: " + resultado);
+                break;
+
+            case 2:
+                resultado = "Martes";
+                System.out.println(" El día 2 es: " + resultado);
+                break;
+
+            case 3:
+                resultado = "Miércoles";
+                System.out.println(" El día 3 es: " + resultado);
+                break;
+
+            case 4:
+                resultado = "Jueves";
+                System.out.println(" El día 4 es: " + resultado);
+                break;
+
+            case 5:
+                resultado = "Viernes";
+                System.out.println(" El día 5 es: " + resultado);
+                break;
+
+            case 6:
+                resultado = "Sábado";
+                System.out.println(" El día 6 es: " + resultado);
+                break;
+
+            default:
+                System.out.println(" El día 7 es domingo");
+
+        }
+
+        lectorTeclado.close();
+    }
+
+    public void ejercicio28() {
+        /*
+        Calificación con switch
+        Desarrolla un programa que pida una letra de calificación (A, B, C, D, F) y use un switch para mostrar
+        el mensaje correspondiente: A="Excelente", B="Muy bien", C="Bien", D="Suficiente", F="Insuficiente".
+        Ejemplo de salida por consola:
+        Introduce tu calificación (A-F): B
+        Calificación B: Muy bien
+     */
+
+        // Creamos un objeto Scanner para leer la entrada del usuario
+        lectorTeclado = new Scanner(System.in);
+
+        System.out.print("Introduce tu calificación (A-E): ");
+        char letra = lectorTeclado.next().charAt(0); // Leemos el primer carácter
+
+
+        switch (letra){
+            case 'A':
+                System.out.println(" Calificación A: Excelente");
+                break;
+
+            case 'B':
+                letra='B';
+                System.out.println(" Calificación B: Muy Bien");
+                break;
+
+            case 'C':
+                System.out.println(" Calificación C: Bien");
+                break;
+
+            case 'D':
+                System.out.println(" Calificación D: Suficiente");
+                break;
+
+            default:
+                System.out.println(" Calificación E: Insuficiente");
+
+        }
+
+        lectorTeclado.close();
+    }
+
+    public void ejercicio29() {
+        /*
+        Calculadora básica con switch
+        Escribe un programa que pida dos números y una operación (+, -, *, /).
+        Usa un switch para realizar la operación correspondiente y mostrar el resultado.
+        Ejemplo de salida por consola:
+        Introduce el primer número: 10
+        Introduce el segundo número: 5
+        Introduce la operación (+, -, *, /): *
+        Resultado: 10 * 5 = 50
+     */
+
+        // Creamos un objeto Scanner para leer la entrada del usuario
+        lectorTeclado = new Scanner(System.in);
+
+        System.out.print("Introduce un número: ");
+        int numero1 = lectorTeclado.nextInt(); // Leemos el primer carácter
+
+        System.out.print("Introduce un número: ");
+        int numero2 = lectorTeclado.nextInt();
+
+        System.out.println("Elige una operación: ");
+        System.out.println("1. Suma: ");
+        System.out.println("2. Resta: ");
+        System.out.println("3. Multiplicación: ");
+        System.out.println("4. División: ");
+        int operacion = lectorTeclado.nextInt();
+
+        int resultado;
+
+        switch (operacion){
+            case 1:
+                resultado= numero1+numero2;
+                System.out.println(" Resultado: " + numero1 + "+" + numero2 + " = " + resultado );
+                break;
+
+            case 2:
+                resultado= numero1-numero2;
+                System.out.println(" Resultado: " + numero1 + "-" + numero2 + " = " + resultado );
+                break;
+
+            case 3:
+                resultado= numero1*numero2;
+                System.out.println(" Resultado: " + numero1 + "*" + numero2 + " = " + resultado );
+                break;
+
+            default:
+                resultado= numero1/numero2;
+                System.out.println(" Resultado: " + numero1 + "/" + numero2 + " = " + resultado );
+
+        }
+
+        lectorTeclado.close();
+    }
+
+    public void ejercicio30() {
+        /*
+        Menú de opciones
+        Crea un programa que muestre un menú con 4 opciones: 1=Ver perfil, 2=Configuración, 3=Ayuda, 4=Salir.
+        Pide al usuario que elija una opción y usa un switch para mostrar el mensaje correspondiente a cada opción.
+        Ejemplo de salida por consola:
+        --- MENÚ ---
+        1. Ver perfil
+        2. Configuración
+        3. Ayuda
+        4. Salir
+        Elige una opción: 2
+        Has seleccionado: Configuración
+     */
+
+        // Creamos un objeto Scanner para leer la entrada del usuario
+        lectorTeclado = new Scanner(System.in);
+
+        System.out.println("Menu opciones: ");
+
+        System.out.println("1. Ver perfil ");
+        System.out.println("2. Configuración ");
+        System.out.println("3. Ayuda: ");
+        System.out.println("4. Salir: ");
+        int opciones = lectorTeclado.nextInt();
+
+        String resultado;
+
+        switch (opciones){
+            case 1:
+                resultado= "opciones";
+                System.out.println("Has seleccionado: Ver perfil.");
+                break;
+
+            case 2:
+                resultado= "opciones";
+                System.out.println("Has seleccionado: Configuración.");
+                break;
+
+            case 3:
+                resultado= "opciones";
+                System.out.println("Has seleccionado: Ayuda.");
+                break;
+
+            default:
+                System.out.println("Has seleccionado: Salir.");
+
+        }
+
+        lectorTeclado.close();
+    }
+
+    public void ejercicio31() {
+        /*
+        Estaciones del año
+        Desarrolla un programa que pida un mes (número del 1 al 12) y use un switch para determinar la estación del año:
+        Invierno (12, 1, 2), Primavera (3, 4, 5), Verano (6, 7, 8), Otoño (9, 10, 11).
+        Ejemplo de salida por consola:
+        Introduce el número del mes (1-12): 7
+        El mes 7 corresponde a: Verano
+     */
+
+        // Creamos un objeto Scanner para leer la entrada del usuario
+        lectorTeclado = new Scanner(System.in);
+
+        System.out.println("Introduce un número del (1 al 12): ");
+        int mes = lectorTeclado.nextInt();
+
+        String estacion;
+
+        switch (mes) {
+            case 12:
+            case 1:
+            case 2:
+                estacion = "Invierno";
+                break;
+
+            case 3:
+            case 4:
+            case 5:
+                estacion = "Primavera";
+                break;
+
+            case 6:
+            case 7:
+            case 8:
+                estacion = "Verano";
+                break;
+
+            case 9:
+            case 10:
+            case 11:
+                estacion = "Otoño";
+                break;
+
+            default:
+                estacion = "Mes inválido. Debe estar entre 1 y 12.";
+                break;
+        }
+
+        System.out.println("El mes " + mes + " corresponde a: " + estacion);
+
+        lectorTeclado.close();
+    }
+
+
 }
