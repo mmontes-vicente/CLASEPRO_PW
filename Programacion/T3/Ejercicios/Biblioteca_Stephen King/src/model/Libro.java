@@ -1,11 +1,10 @@
-package modelo;
+package model;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.List;
 
 public class Libro implements Serializable {
-
-    private static final long serialVersionUID = 1L;
 
     private int id;
     private String titulo;
@@ -17,20 +16,9 @@ public class Libro implements Serializable {
     private String isbn;
     private String paginas;
 
-    public Libro() {}
-
-    public Libro(int id, String titulo, int anio, String handle,
-                 List<String> villanos, List<String> notas,
-                 String editorial, String isbn, String paginas) {
-        this.id = id;
-        this.titulo = titulo;
-        this.anio = anio;
-        this.handle = handle;
-        this.villanos = villanos;
-        this.notas = notas;
-        this.editorial = editorial;
-        this.isbn = isbn;
-        this.paginas = paginas;
+    public Libro() {
+        villanos = new ArrayList<String>();
+        notas = new ArrayList<String>();
     }
 
     public int getId() { return id; }
@@ -60,12 +48,10 @@ public class Libro implements Serializable {
     public String getPaginas() { return paginas; }
     public void setPaginas(String paginas) { this.paginas = paginas; }
 
-    @Override
     public String toString() {
         return "ID        : " + id + "\n" +
                "Titulo    : " + titulo + "\n" +
                "Anio      : " + anio + "\n" +
-               "Handle    : " + handle + "\n" +
                "Editorial : " + (editorial != null ? editorial : "N/A") + "\n" +
                "ISBN      : " + (isbn != null ? isbn : "N/A") + "\n" +
                "Paginas   : " + (paginas != null ? paginas : "N/A");
